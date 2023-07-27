@@ -1,0 +1,477 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Roboto:wght@400;500&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  --first-color: #6CACE0;
+  --title-color: #27292A;
+  --text-color: #45484A;
+  --text-color-light: #8A8F93;
+  --body-color: #FCFCFD;
+  --container-color: #F2F2F3;
+
+  /* Change the first number */
+  /* Blue: 207 - Purple: 250 - Pink: 356 - Teal: 174 */
+  --gradient-color: linear-gradient(180deg,
+                      hsla(207, 48%, 72%, 0),
+                      hsla(207, 65%, 65%, 1));
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Roboto', sans-serif;
+  --title-font: 'Lora', serif;
+  --biggest-font-size: 1.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+  --tiny-font-size: .625rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+    --tiny-font-size: .688rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: background .4s; /* for dark mode animation */
+}
+
+h1, h2, h3 {
+  color: var(--title-color);
+  font-family:'Lora', serif;
+  font-weight: var(--font-medium);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== THEME ===============*/
+
+
+/*========== Variables Dark theme ==========*/
+body.dark-theme {
+  --title-color: #F2F2F3;
+  --text-color: #A2A6A9;
+  --body-color: #181A1B;
+  --container-color: #1D1F20;
+}
+
+/*========== 
+    Color changes in some parts of 
+    the website, in light theme
+==========*/
+
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1024px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+ 
+.section {
+  padding-block: 2.5rem;
+}
+
+.section__border {
+  border-bottom: 1px solid var(--title-color);
+  padding-bottom: 3.5rem;
+}
+
+.section__title, 
+.section__subtitle {
+  text-align: center;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: .25rem;
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+  margin-bottom: 3rem;
+}
+
+.main {
+  overflow: hidden; /* For animation */
+}
+
+/*=============== HEADER & NAV ===============*/
+.header{
+  width: 100%;
+  position: fixed;
+  bottom: 2rem;
+  left: 0;
+  z-index: var(--z-fixed);
+
+}
+
+.nav{
+  height: calc(var(--header-height) + .5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--body-color);
+  box-shadow: 0 4px 20px hsla(207, 24%, 35%, .1);
+  padding-inline: 1.5rem;
+  border-radius: 3rem;
+}
+
+.nav-logo,
+.nav__toggle,
+.nav__close{
+  color: var(--title-color);
+}
+
+.nav-logo{
+  font-family: var(--title-font);
+  font-weight: var(--font-medium);
+}
+
+.nav__toggle{
+  display: flex;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1023px) {
+  .nav-menu{
+    position: fixed;
+    width: 88%;
+    left: 0;
+    right: 0;
+    bottom: -60%;
+    margin: 0 auto;
+    background-color: var(--body-color);
+    box-shadow: 0 4px 20px hsla(207, 24%, 35%, .1);
+    padding: 2rem 1.5rem 5rem;
+    border-radius: 2rem;
+    transition: bottom .3s;
+  }
+}
+
+.nav__list{
+  grid-template-columns: repeat(3 , max-content);
+  justify-content: center;
+  gap: 2rem 3rem;
+}
+
+.nav__link{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: .25rem;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  transition: color .3s;
+}
+
+.nav__link:hover{
+  color: var(--title-color);
+}
+
+.nav__link i{
+  font-size: 1.25rem;
+}
+
+.nav__close{
+  position: absolute;
+  right: 1.5rem;
+  bottom: .7rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Active link */
+/* Show menu */
+.show-menu{
+  bottom: 2rem;
+}
+
+/*=============== HOME ===============*/
+.home-container{
+  row-gap: 4rem;
+  padding-top: 2rem;
+}
+
+.home-data{
+  row-gap: 1.5rem;
+}
+
+.home-title{
+  text-align: center;
+  font-size: var(--biggest-font-size);
+  letter-spacing: .3px;
+  margin: .5rem;
+
+}
+
+.home-blob{
+  position: relative;
+  width: 200px;
+  height: 290px;
+  background-color: var(--body-color);
+  border: 2px solid var(--text-color-light);
+  justify-self: center;
+  border-radius: 6.25rem;
+  place-items: center;
+}
+
+.home-profile{
+  width: 170px;
+  height: 260px;
+  background: var(--gradient-color);
+  border-radius: 5.5rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.home-profile img{
+  width: 150px;
+}
+
+.home-shape-wawes,
+.home-shape-circle{
+  position: absolute;
+  opacity: .1;
+}
+
+.home-shape-wawes{
+  width: 50px;
+  left: -1.5rem;
+  top: 5rem;
+}
+
+.home-shape-circle{
+  width: 150px;
+  bottom: -2rem;
+  right: -3rem;
+  transform: rotate(15deg);
+  z-index: -1;
+}
+
+.home-social{
+  justify-self: center;
+  display: flex;
+  column-gap: 1.25rem;
+}
+
+.home-social-link{
+  font-size: 1.25rem;
+  color: var(--text-color-light);
+  transform: color .3s;
+}
+
+.home-social-link:hover{
+  color: var(--title-color);
+}
+
+.home-info{
+  display: grid;
+  row-gap: 2rem;
+}
+
+.home-info-title{
+  font-family: var(--body-font);
+  font-size: var(--smaller-font-size);
+  font-weight: 400;
+  color: var(--text-color-light);
+  margin-bottom: 1 rem ;
+}
+
+.home-info-description,
+.home-info-number{
+  font-family: var(--title-font);
+  color: var(--title-color);
+}
+
+.home-info-number{
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+}
+/*=============== SKILLS ===============*/
+.skills-container{
+  row-gap: 3.5rem;
+}
+
+.skills-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: .5rem;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 2.5rem;
+}
+
+.skills-title i{
+  font-size: 1rem;
+  font-weight: initial;
+}
+
+.skills-info,
+.skills-data{
+  display: grid;
+}
+
+.skills-info{
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem 2rem;
+}
+
+.skills-data{
+  justify-content:center ;
+  text-align: center;
+}
+
+.skills-blob{
+  width: 80px;
+  height: 100px;
+  background-color: var(--container-color);
+  border-radius: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom:1rem ;
+}
+
+.skills-blob img{
+  width: 40px;
+}
+
+.skills-name{
+  font-size: var(--small-font-size);
+  margin-bottom: .25rem;
+}
+
+.skills-subtitle{
+  font-size: var(--tiny-font-size);
+  color: var(--text-color-light);
+}
+
+/* Animation skills */
+.skills-blob:hover img{
+  animation: bounce-skills .6s;
+}
+
+@keyframes bounce-skills{
+  0%{
+    transform: translate(0);
+  }
+  20%{
+    transform: translateY(-6px);
+  }
+  40%{
+    transform: translate(0);
+  }
+  60%{
+    transform: translateY(-3px);
+  }
+  80%{
+    transform: translate(0);
+  }
+}
+
+/*=============== QUALIFICATION ===============*/
+
+
+/*=============== SERVICES ===============*/
+
+
+/*=============== PROJECTS ===============*/
+
+
+/* Swiper class */
+
+
+/*=============== TESTIMONIAL ===============*/
+
+
+/* Swiper class */
+
+
+/*=============== CONTACT ===============*/
+
+
+/* Status color */
+
+
+/*=============== FOOTER ===============*/
+
+
+/*=============== SCROLL BAR ===============*/
+
+
+/*=============== SCROLL UP ===============*/
+
+
+/* Show Scroll Up*/
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+
+/* For medium devices */
+
+
+/* For large devices */
