@@ -700,10 +700,145 @@ body.dark-theme {
   color: var(--text-color-light);
 }
 /*=============== CONTACT ===============*/
+.contact-container{
+  row-gap: 3.5rem;
+}
 
+.contact-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: .5rem;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 2.5rem;
+}
+
+.contact-title i{
+  font-size: 1rem;
+  font-weight: initial ;
+}
+
+.contact-info,
+.contact-data,
+.contact-form{
+  display: grid;
+}
+
+.contact-info{
+  row-gap: 2rem;
+}
+
+.contact-data{
+  row-gap: .75rem;
+}
+
+.contact-data-title{
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+.contact-data-info{
+  font-size: var(--small-font-size);
+  color: var(--title-color);
+  font-family: var(--title-font);
+}
+
+.contact-button{
+  width: max-content;
+  display: inline-flex;
+  align-items: center;
+  column-gap: .5rem;
+  color: var(--title-color);
+  font-size: var(--small-font-size);
+}
+
+.contact-button i{
+  font-size: 1rem;
+  transition: transform .3s;
+}
+
+.contact-button:hover i{
+  transform: translateX(.25rem);
+}
+
+.contact-form{
+  position: relative;
+  row-gap: 2rem;
+}
+
+.contact-form-div{
+  position: relative;
+  height: 4rem;
+}
+
+.contact-form-input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--text-color-light);
+  border-radius: 2rem;
+  padding: 1.5rem;
+  font-size: var(--normal-font-size);
+  font-family: var(--title-font);
+  color: var(--title-color);
+  background: none;
+  outline: none;
+  z-index: 1;
+}
+
+.contact-form-tag{
+  position: absolute;
+  top: -.75rem;
+  left: 1.25em;
+  z-index: 10;
+  background-color: var(--body-color);
+  color: var(--title-color);
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  padding: .35rem;
+}
+
+.contact-form-area{
+  height: 10rem;
+}
+.contact-form-area textarea{
+  resize: none;
+}
+
+.contact-form .contact-button{
+  border: none;
+  background: none;
+  font-size: var(--h2-font-size);
+  font-family: var(--title-font);
+  font-weight: var(--font-semi-bold);
+  cursor: pointer;
+  outline: none;
+  margin-top: .75rem;
+}
+
+.contact-form .contact-button i{
+  font-size: 1.5rem;
+  font-weight: initial;
+}
+
+.contact-message{
+  font-size: var(--small-font-size);
+  position: absolute;
+  bottom: 2.8rem;
+  left: 1.5rem;
+}
 
 /* Status color */
+.color-red{
+  color: hsla(4, 71%, 50%,);
+}
 
+.color-blue{
+  color: hsla(207, 56%, 45%,);
+}
 
 /*=============== FOOTER ===============*/
 
