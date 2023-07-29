@@ -72,7 +72,7 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
-  transition: background .4s; /* for dark mode animation */
+  transition: background-color .4s; /* for dark mode animation */
 }
 
 h1, h2, h3 {
@@ -95,7 +95,18 @@ img {
 }
 
 /*=============== THEME ===============*/
+.nav__buttons{
+ display: flex; 
+ align-items: center;
+ column-gap: 1.5rem;
+}
 
+.change-theme{
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: color .3s;
+}
 
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
@@ -109,7 +120,39 @@ body.dark-theme {
     Color changes in some parts of 
     the website, in light theme
 ==========*/
+.dark-theme .nav,
+.dark-theme .nav-menu,
+.dark-theme .scroll-up{
+  background-color: var(--container-color);
+  box-shadow: 0 4px 20px hsla(207, 24%, 8% , .4);
+}
 
+.dark-theme .home-shape-circle,
+.dark-theme .home-shape-wawes,
+.dark-theme .qualification-img,
+.dark-theme .testimonial-img{
+  filter: invert(1);
+}
+
+.dark-theme .home-social-link{
+  color: var(--title-color);
+}
+
+.dark-theme .section__border{
+  border-bottom: 1px solid hsl(207 , 4% , 32%);
+}
+
+.dark-theme::-webkit-scrollbar{
+  background-color : hsl(207, 4%  , 15%)
+}
+
+.dark-theme::-webkit-scrollbar-thumb{
+  background-color : hsl(207, 4%  , 25%)
+}
+
+.dark-theme::-webkit-scrollbar-thumb:hover{
+  background-color : hsl(207, 4%  , 35%)
+}
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
@@ -172,6 +215,7 @@ body.dark-theme {
   box-shadow: 0 4px 20px hsla(207, 24%, 35%, .1);
   padding-inline: 1.5rem;
   border-radius: 3rem;
+  transition: background-color .4s; /* for dark mode animation */
 }
 
 .nav-logo,
@@ -275,6 +319,7 @@ body.dark-theme {
   justify-self: center;
   border-radius: 6.25rem;
   place-items: center;
+  transition: background-color .4s; /* for dark mode animation */
 }
 
 .home-profile{
@@ -408,6 +453,7 @@ body.dark-theme {
   justify-content: center;
   align-items: center;
   margin-bottom:1rem ;
+  transition: background-color .4s; /* for dark mode animation */
 }
 
 .skills-blob img{
@@ -514,6 +560,7 @@ body.dark-theme {
   text-align: center;
   padding: 3.5rem 1rem;
   border-radius: 7.25rem;
+  transition: background-color .4s; /* for dark mode animation */
 }
 
 .services-card i{
@@ -802,6 +849,7 @@ body.dark-theme {
   font-size: var(--smaller-font-size);
   font-weight: var(--font-medium);
   padding: .35rem;
+  transition: background-color .4s; /* for dark mode animation */
 }
 
 .contact-form-area{
@@ -932,6 +980,9 @@ body.dark-theme {
 
 /* Show Scroll Up*/
 
+.show-scroll{
+  bottom: 7.5rem;
+}
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
