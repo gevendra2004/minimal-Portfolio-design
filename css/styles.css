@@ -240,6 +240,9 @@ body.dark-theme {
 }
 
 /* Active link */
+.active-link{
+  color: var(--title-color);
+}
 /* Show menu */
 .show-menu{
   bottom: 2rem;
@@ -841,13 +844,91 @@ body.dark-theme {
 }
 
 /*=============== FOOTER ===============*/
+.footer-container{
+  padding: 3rem 0 7rem;
+  text-align: center;
+}
 
+.footer-title{
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 1rem;
+}
 
+.footer-list,
+.footer-social{
+  display: flex;
+  justify-content: center;
+}
+
+.footer-list{
+  margin: 2.5rem 0;
+  column-gap: 2.5rem;
+}
+
+.footer-link{
+  color: var(--title-color);
+}
+
+.footer-link:hover{
+  text-decoration: underline;
+}
+
+.footer-social{
+  column-gap: 1.25rem;
+}
+
+.footer-social-link{
+  font-size: 1.25rem;
+  color: var(--title-color);
+  transition: transform .3s ;
+}
+
+.footer-social-link:hover{
+  transform: translateY(-.15rem);
+}
+
+.footer-copy{
+  display: block;
+  margin-top: 4.5rem;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
 /*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar{
+  width: .6rem;
+  border-radius: .5rem;
+  background-color: hsla(207, 4%, 75%);
+}
 
+::-webkit-scrollbar-thumb{
+  background-color: hsla(207, 4%, 65%);
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: hsla(207, 4%, 55%);
+}
 
 /*=============== SCROLL UP ===============*/
+.scroll-up{
+  position: fixed;
+  right: 1rem;
+  bottom: -30%;
+  background-color: var(--body-color);
+  box-shadow: 0 4px 12px hsla(207, 24%, 35%, .15);
+  display: inline-flex;
+  padding: .35rem;
+  border-radius: .25rem ;
+  font-size: 1.1rem;
+  color: var(--title-color);
+  z-index: var(--z-tooltip);
+  transition: bottom .3s , transform .3s;
+}
 
+.scroll-up:hover{
+  transform: translateY(-.25rem);
+}
 
 /* Show Scroll Up*/
 
