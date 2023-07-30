@@ -61,39 +61,32 @@ const contactForm = document.getElementById('contact-form'),
       contactProject = document.getElementById('contact-project'),
       contactMessage = document.getElementById('contact-message')
 
-// const sendEmail = (email) =>{
-//   email.preventDefault()
+const sendEmail =(email) => {
+  email.preventDefault()
 
-//   // Check if the field has a value
-//   if(contactName.value === '' || contactEmail.value === '' || contactProject.value === ''){
-//     // Add and remove color
-//     contactMessage.classList.remove('color-blue')
-//     contactMessage.classList.add('color-red')
+  // Cheack if the field has a value
+  if(!contactName || !contactEmail || contactProject.value === ''){
+    // Add or remove color
+    contactMessage.classList.remove('color-blue')
+    contactMessage.classList.add('color-red')
 
-//     // Show message	
-//     contactMessage.textContent = 'Write all the input fields 📩'
-//   }else{
-//     // serviceID - templateID - #form - publicKey
-//     emailjs.sendForm('','','','')
-//           .then(() =>{
-//             contactMessage.classList.add('color-blue')
-//             contactMessage.textContent = 'Message sent ✅'
+    //show message
+    contactMessage.textContent = 'Wite all the input fields 📩'
+  }else{
+    emailjs.sendForm('service_q9e1tjc','template_uwazhn5','#contact-form','cnGCR34xaw1QfKObL')
 
-//             // Remove message after 5 sec
-//             setTimeout(()=> {
-//               contactMessage.textContent = ''
-//             }, 5000)
-//           } , (error) =>{
-//             alert('OOPS! SOMETHING HAS FAILED...' , error)
-//           })
+    // To clear the input
+    contactName.value = ''
+    contactEmail.value = ''
+    contactProject.value = ''
+    contactMessage.textContent = 'Message sent ✅'
+    setTimeout(() =>{
+      contactMessage.textContent = ''
+    } , 5000)
+  }
+}
 
-//           // to clear the input field 
-//           contactName.value = ''
-//           contactEmail.value = ''
-//           contactProject.value = ''
-//   }
-// }
-// contactForm.addEventListener('submit' , sendEmail)
+contactForm.addEventListener('submit' , sendEmail)
 
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
